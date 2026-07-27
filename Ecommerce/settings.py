@@ -127,6 +127,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Stripe settings
 STRIPE_PUBLISHABLE_KEY = 'pk_test_51TxekkRrhRrKXHGDbAuMjcJcfqkSxgVAe83PlZhsG9UY05GOr8eIyyJIDvFbBl22s9xGGMs1ppZ80IYj27RaK9jt00iNsFKUCd'  # Publishable key
-STRIPE_SECRET_KEY = 'sk_test_51TxekkRrhRrKXHGDO3ncoGmuqChJZjYXOZ5w4O8VWQTdXraTGeFYZ9DH4BMtamIGneFQWIQFFgVkMZNC67RzXT2M0094zJ9sqo'       # Secret key
+  
 STRIPE_API_VERSION = '2023-10-16'
 STRIPE_CURRENCY = 'usd'
+
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# Read the secret key from environment variables
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
