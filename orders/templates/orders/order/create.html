@@ -13,35 +13,47 @@
             <form method="post">
                 {% csrf_token %}
                 
+                {% if form.non_field_errors %}
+                    <div class="alert alert-danger">
+                        {{ form.non_field_errors }}
+                    </div>
+                {% endif %}
+                
                 <div class="row g-3">
                     <div class="col-sm-6">
                         <label for="{{ form.first_name.id_for_label }}" class="form-label">First name</label>
-                        <input type="text" name="first_name" class="form-control" id="{{ form.first_name.id_for_label }}" required value="{{ form.first_name.value|default:'' }}">
+                        <input type="text" name="first_name" class="form-control {% if form.first_name.errors %}is-invalid{% endif %}" id="{{ form.first_name.id_for_label }}" required value="{{ form.first_name.value|default:'' }}">
+                        {% if form.first_name.errors %}<div class="invalid-feedback">{{ form.first_name.errors }}</div>{% endif %}
                     </div>
 
                     <div class="col-sm-6">
                         <label for="{{ form.last_name.id_for_label }}" class="form-label">Last name</label>
-                        <input type="text" name="last_name" class="form-control" id="{{ form.last_name.id_for_label }}" required value="{{ form.last_name.value|default:'' }}">
+                        <input type="text" name="last_name" class="form-control {% if form.last_name.errors %}is-invalid{% endif %}" id="{{ form.last_name.id_for_label }}" required value="{{ form.last_name.value|default:'' }}">
+                        {% if form.last_name.errors %}<div class="invalid-feedback">{{ form.last_name.errors }}</div>{% endif %}
                     </div>
 
                     <div class="col-12">
                         <label for="{{ form.email.id_for_label }}" class="form-label">Email</label>
-                        <input type="email" name="email" class="form-control" id="{{ form.email.id_for_label }}" placeholder="you@example.com" required value="{{ form.email.value|default:'' }}">
+                        <input type="email" name="email" class="form-control {% if form.email.errors %}is-invalid{% endif %}" id="{{ form.email.id_for_label }}" placeholder="you@example.com" required value="{{ form.email.value|default:'' }}">
+                        {% if form.email.errors %}<div class="invalid-feedback">{{ form.email.errors }}</div>{% endif %}
                     </div>
 
                     <div class="col-12">
                         <label for="{{ form.address.id_for_label }}" class="form-label">Address</label>
-                        <input type="text" name="address" class="form-control" id="{{ form.address.id_for_label }}" placeholder="1234 Main St" required value="{{ form.address.value|default:'' }}">
+                        <input type="text" name="address" class="form-control {% if form.address.errors %}is-invalid{% endif %}" id="{{ form.address.id_for_label }}" placeholder="1234 Main St" required value="{{ form.address.value|default:'' }}">
+                        {% if form.address.errors %}<div class="invalid-feedback">{{ form.address.errors }}</div>{% endif %}
                     </div>
 
                     <div class="col-md-6">
                         <label for="{{ form.city.id_for_label }}" class="form-label">City</label>
-                        <input type="text" name="city" class="form-control" id="{{ form.city.id_for_label }}" required value="{{ form.city.value|default:'' }}">
+                        <input type="text" name="city" class="form-control {% if form.city.errors %}is-invalid{% endif %}" id="{{ form.city.id_for_label }}" required value="{{ form.city.value|default:'' }}">
+                        {% if form.city.errors %}<div class="invalid-feedback">{{ form.city.errors }}</div>{% endif %}
                     </div>
 
                     <div class="col-md-6">
                         <label for="{{ form.postal_code.id_for_label }}" class="form-label">Postal code</label>
-                        <input type="text" name="postal_code" class="form-control" id="{{ form.postal_code.id_for_label }}" required value="{{ form.postal_code.value|default:'' }}">
+                        <input type="text" name="postal_code" class="form-control {% if form.postal_code.errors %}is-invalid{% endif %}" id="{{ form.postal_code.id_for_label }}" required value="{{ form.postal_code.value|default:'' }}">
+                        {% if form.postal_code.errors %}<div class="invalid-feedback">{{ form.postal_code.errors }}</div>{% endif %}
                     </div>
                 </div>
 

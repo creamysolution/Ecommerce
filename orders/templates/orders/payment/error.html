@@ -1,0 +1,12 @@
+{% extends "store/base.html" %}
+
+{% block title %}Payment Error | ModernShop{% endblock %}
+
+{% block content %}
+<div class="alert alert-danger" role="alert">
+    <h4 class="alert-heading">Payment Error</h4>
+    <p>{{ error }}</p>
+    <hr>
+    <a href="{% url 'orders:order_create' %}" class="btn btn-primary">Try Again</a>
+</div>
+{% endblock %}
