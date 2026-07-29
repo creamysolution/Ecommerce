@@ -28,3 +28,6 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+else:
+    # Force serving media files in production on Render
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
