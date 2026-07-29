@@ -1,5 +1,69 @@
 [
 {
+  "model": "store.category",
+  "pk": 2,
+  "fields": {
+    "name": "Electronics",
+    "slug": "electronics"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 3,
+  "fields": {
+    "name": "Fashion",
+    "slug": "fashion"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 4,
+  "fields": {
+    "name": "Home & Furniture",
+    "slug": "home-furniture"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 5,
+  "fields": {
+    "name": "Kitchen Appliance",
+    "slug": "kitchen-appliance"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 6,
+  "fields": {
+    "name": "Sport & Fitness",
+    "slug": "sport-fitness"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 7,
+  "fields": {
+    "name": "Beauty & Personal Care",
+    "slug": "beauty-personal-care"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 8,
+  "fields": {
+    "name": "Toys & Kids",
+    "slug": "toys-kids"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 9,
+  "fields": {
+    "name": "Pet Supplies",
+    "slug": "pet-supplies"
+  }
+},
+{
   "model": "store.product",
   "pk": 2,
   "fields": {
